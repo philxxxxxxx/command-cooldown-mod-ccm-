@@ -1,0 +1,40 @@
+{
+    "schemaVersion": 1,
+    "id": "ccm",
+    "version": "${version}",
+    "name": "Ccm",
+    "description": "This is an example description! Tell everyone what your mod is about!",
+    "authors": [
+        "Me!"
+    ],
+    "contact": {
+        "homepage": "https://fabricmc.net/",
+        "sources": "https://github.com/FabricMC/fabric-example-mod"
+    },
+    "license": "CC0-1.0",
+    "icon": "assets/ccm/icon.png",
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+            "com.example.commandcooldown.Ccm",
+            "com.example.commandcooldown.CommandCooldownMod"
+        ],
+        "client": [
+            "com.example.commandcooldown.client.CcmClient"
+        ]
+    },
+    "mixins": [
+        "ccm.mixins.json",
+        {
+            "config": "ccm.client.mixins.json",
+            "environment": "client"
+        },
+        "commandcooldown.mixins.json"
+    ],
+    "depends": {
+        "fabricloader": ">=0.19.5",
+        "minecraft": "~26.2",
+        "java": ">=25",
+        "fabric-api": "*"
+    }
+}
